@@ -8,7 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { CrearTarjetaComponent } from './components/dummies/crear-tarjeta/crear-tarjeta.component';
-import { ListarTarjetaComponent } from './components/smarts/listar-tarjeta/listar-tarjeta.component';
+import { ListarTarjetaComponent } from './components/dummies/listar-tarjeta/listar-tarjeta.component';
 import {environment} from "../environments/environment";
 import { DashboardComponent } from './components/smarts/dashboard/dashboard.component';
 
