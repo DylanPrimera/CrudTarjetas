@@ -45,8 +45,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   public agregarTarjeta(tarjeta: TarjetaCredito) {
-    this.toast.success('Tarjeta guardada exitosamente!', 'Notificacion');
     this.tarjetaService.guardarTarjeta(tarjeta).then(() => {
+      this.toast.success('Tarjeta guardada exitosamente!', 'Notificacion');
     }, () => {
       this.toast.error('Hubo un error al tratar de agregar la tarjeta', 'Error');
     })
@@ -57,18 +57,18 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   public editarTarjeta(value: any) {
-    this.toast.success('Tarjeta editada.', 'Notificacion');
     this.titulo = 'Agregar tarjeta';
     this.id = undefined;
     this.tarjetaService.editarTarjeta(value.id, value).then(() => {
+      this.toast.success('Tarjeta editada.', 'Notificacion');
     }, () => {
       this.toast.error('Hubo un error al tratar de editar la tarjeta', 'Error');
     });
   }
 
   public eliminarTarjeta(value: any) {
-    this.toast.success('Tarjeta eliminada.', 'Notificacion');
     this.tarjetaService.eliminarTarjeta(value).then(()=> {
+      this.toast.success('Tarjeta eliminada.', 'Notificacion');
     }, () => {
       this.toast.error('Hubo un error al tratar de agregar la tarjeta', 'Error');
     })
