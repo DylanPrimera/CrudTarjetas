@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="titulo">CREDITBLOC</h1>
+          <hr class="my-4">
+          <p>Bienvenido a este sistema basico donde usted puede guardar la informacion de sus tarjetas de credito.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 mt-4">
+      <app-crear-tarjeta (tarjeta)="agregarTarjeta($event)" (editTarjeta)="editarTarjeta($event)" [id]="id" [titulo]="titulo" [datosTarjeta]="datosTarjeta"></app-crear-tarjeta>
+    </div>
+    <div class="col-lg-6 mt-4">
+      <app-listar-tarjeta [tarjeta]="tarjetas" (editar)="outputEditarTarjeta($event)" (eliminar)="eliminarTarjeta($event)"></app-listar-tarjeta>
+    </div>
+  </div>
+</div>

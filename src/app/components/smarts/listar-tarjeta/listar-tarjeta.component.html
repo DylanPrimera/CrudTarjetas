@@ -1,0 +1,33 @@
+<div class="custom-card">
+  <div class="card-body">
+    <h1 class="list-title">TARJETAS</h1>
+    <div  class="d-flex justify-content-center">
+      <ng-container *ngIf="showSpinner else Data">
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </ng-container>
+    </div>
+    <ng-template #Data>
+      <table class="table text-center texto-tabla">
+        <thead>
+        <tr>
+          <th scope="col">Titular</th>
+          <th scope="col">Numero de tarjeta</th>
+          <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let t of tarjeta">
+          <td>{{t.titular}}</td>
+          <td>{{t.numeroTarjeta}}</td>
+          <td>
+            <i class="fas fa-edit text-info actions" (click)="editarRegistro(t)"></i>
+            <i class="fas fa-trash text-danger actions" (click)="eliminarRegistro(t.id)"></i>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </ng-template>
+  </div>
+</div>
